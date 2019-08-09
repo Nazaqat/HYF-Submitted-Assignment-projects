@@ -1,0 +1,204 @@
+*{margin: 0; padding: 0;}
+
+h1 {
+    display: flex;
+    justify-content: space-between;      
+    color: black;   
+    margin: 1% 5% 0 3%; 
+    font-size: 20px;
+}
+
+.header {
+    display: inline;
+    margin: 0;
+    padding: 5px; 
+    font-family: Georgia;
+}
+   
+a {
+text-decoration: none;
+line
+}
+
+.banner{
+    background: url("image\ for\ banner\ background.jpg");
+    background-size: cover;
+    margin: 0 5% 0 3%; 
+    color: aliceblue;
+}
+
+.banner-text {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    padding: 10% 0;
+}
+
+.banner-text-items {
+    color:white;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+}
+
+#nazaqatsphoto {
+    width: 200px;
+    height: 200px;
+    float: left;
+    border-radius: 90%;
+}
+#nazaqatsphoto:hover{
+    transform: scale(1.1);
+}
+
+
+.banner-text-items h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.banner-text-items h2:hover{
+    transform: scale(1.1);
+}
+
+.main-content {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    }
+
+.main1 {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 3%;
+    text-align: left;
+       
+    }
+
+    .main1 h2{
+        background: #24dab2;
+        color: #fff;
+        display: block;
+        font-size: 20px;
+        margin-top:25px;
+        padding: 15px 80px;
+        text-decoration: none;    
+    }
+    .main1 h2:hover {
+        transform: scale(1.3);
+}
+
+
+
+#contact-info{
+    list-style: none;
+}
+
+
+.contact-items {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    -webkit-box-align: center;
+    -webkit-box-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.contact {
+    background: url("Contact\ us 2.jpg");
+    background-size: cover;
+    padding: 40px 0;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.contact-items h2 {
+    color: orangered;
+    font-size: 40px;
+    margin-bottom: 18px;
+    
+}
+
+.contact-items h2:hover{
+    transform: scale(1.2);
+}
+
+.contact-items input[type ="text"] {
+border-radius: 10px;
+margin-bottom: 15px;
+padding: 15px;
+width: 30%;
+}
+
+.contact-items textarea{
+border-radius: 10px;
+height: 150px;
+padding: 15px;
+width: 30%;
+}
+
+.contact-items a{
+    background: #da4b29;
+    color: #fff;
+    display: block;
+    font-size: 20px;
+    margin-top:25px;
+    padding: 15px 80px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.contact-items a:hover{
+    transform: scale(1.2);
+}
+
+#linkedinlogo{
+    width: 40px;
+    height: 40px;
+}
+
+h3:hover{
+    transform: scale(1.1);
+    transform-style: preserve-3d;
+}
+#learning{
+    text-align: center;
+    list-style: none;
+}
+
+#strategies{
+    text-align: center;
+    list-style: none;
+}
+
+#strategies:hover{
+    transform: scale(1.5);
+}
+
+.footer, .back_top{
+    display: inline;
+    margin-top: 10px;
+    padding: 5px; 
+    font-family: Georgia;
+}
+
