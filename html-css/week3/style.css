@@ -1,0 +1,280 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url(images.png);
+    background-size: cover;
+    
+}
+* {box-sizing: border-box;}
+/*styling first, second & fourth section*/
+.loginbox{
+  width: 50%;
+  position: absolute;
+  top: 2%;
+  left: 30%;
+ 
+}
+h1{
+  color: rgb(89, 223, 27);
+}
+
+
+
+.textbox{
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0;
+  border-bottom: 1px solid #4caf50;
+  color: white;
+}
+
+.textbox input, select, number, textarea{
+  border:none;
+  outline: none;
+  background: none;
+  color: white;
+  font-size: 18px;
+  float: left;
+  
+
+}
+
+input[type=text],
+input[type=select],
+input[type=psw-repeat],
+input[type=number],
+input[type=password]{
+  width: 100%;
+  padding: 15px;
+  color: white;
+}
+
+.textbox select{
+  width: 100%;
+  padding: 15px;
+}
+
+.textbox textarea{
+  width: 100%;
+  padding: 15px;
+}
+
+#country{
+  color: white;
+  background: rgb(23, 26, 16);
+}
+
+.btn{
+  width: 100%;
+  background-color: rgb(89, 223, 27);
+  border: 2px solid #4caf50;
+  color: white;
+  padding: 5px;
+  font-size: 30px;
+  margin-top: 10px;
+  text-emphasis: 10px;
+  border-radius: 50px;
+
+}
+
+.btn:hover{
+  transform: scale(1.1);
+}
+
+
+h2, p{
+  color: white;
+  margin-bottom: 20px;
+}
+
+/*Preferences styling 3rd Section*/
+.pref{
+  width: 50%;
+  position: absolute;
+  top: 2%;
+  left: 30%;
+  color: white;
+}
+
+
+#newsletter{
+  color: rgb(89, 223, 27);
+}
+
+/*Styling Items part*/
+.itemtcontainer{
+  width: 50%;
+  height: auto;
+  margin-top: 8%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+  margin-left: 30%;
+  
+   
+}
+
+.items{
+  width: 200px;
+  height: 200px;
+  margin:auto;
+  box-sizing: border-box;
+  border: 2px dotted darkorange;
+  border-right: rgb(35, 199, 43);
+  font-size: 20px;
+  justify-content: center;
+  text-align: center;
+  padding: 90px;
+  justify-content: space-between;
+  float: left;
+  color: white;
+  
+  
+}
+
+.box-images{
+  width: 100%;
+  margin-left: 30%;
+  margin-top: 2%;
+  color: white;
+font-size: larger;
+
+}
+
+/*styling images area*/
+
+.itemtimages{
+  width: 50%;
+  height: auto;
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+  margin-left: 30%;
+  
+  
+  
+
+ 
+}
+
+.imagex{
+  width: 200px;
+  height: 200px;
+  margin:auto;
+  box-sizing: border-box;
+  border: 2px dotted darkorange;
+  border-right: rgb(35, 199, 43);
+  font-size: 20px;
+  justify-content: center;
+  text-align: center;
+  justify-content: space-around;
+  justify-content: stretch;
+  float: left;
+  color: white;
+  
+  
+}
+
+.imagex :hover{
+  transform: scale(1.1);
+}
+image{
+  width: 200px;
+  height: 200px;
+  
+}
+
+#pbtn{
+
+  width: 50%;
+  background-color: rgb(89, 223, 27);
+  border: 2px solid #4caf50;
+  color: white;
+  padding: 5px;
+  font-size: 30px;
+  margin-top: 10px;
+  text-emphasis: 10px;
+  margin-left: 30%;
+
+}
+
+.pbtn:hover{
+  transform: scale(1.1);
+}
+
+}
+
+
+
+
+@media screen and (max-width: 1200px){
+  .items{
+    width: 30%;
+
+  }
+}
+
+@media screen and (max-width: 600px){
+  .items{
+    width: 80%;
+    
+  }
+}
+
+
+/*styling progress bar*/
+.progcontainer{
+  width: 30%;
+  
+}
+
+.progress-bar{
+  background-color: rgb(89, 223, 27);
+  color: aliceblue;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 15px;
+  font-size: larger;
+}
+
+.progcontainer1{
+  width: 80%;
+  
+}
+
+.progress-bar1{
+  background-color: rgb(89, 223, 27);
+  color: aliceblue;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 15px;
+  font-size: larger;
+}
+
+
+.progcontainer2{
+  width: 100%;
+  
+}
+
+.progress-bar2{
+  background-color: rgb(89, 223, 27);
+  color: aliceblue;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 15px;
+  font-size: larger;
+}
+
+
+h2 {
+  border-bottom: 4px solid rgb(89, 223, 27);
+  width: 60%;
+  border-radius: 5px;
+}

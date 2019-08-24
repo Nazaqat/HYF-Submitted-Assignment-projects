@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>payment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="" method="POST">
+
+     <!-- Payment section -->
+     <div class="loginbox">
+         <h2>Step 4/4- Payment</h2>
+         <p>Please fill in your payment data</p> 
+
+         
+         <div class="progcontainer2">
+                <div class="progress2">
+                  <div class="progress-bar2" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                    100%
+                  </div>
+                </div>
+              </div>
+
+             
+            <div class="textbox">
+            <input type="text" placeholder="Name on credit card..." name="lname" value="" required></div>
+            
+            <div class="textbox">
+                        <select name="cardtype" id="country" required>
+                        <option value="">choose card type</option>
+                         <option value="Debit Card">Debit Card</option>
+                        <option value="Credit Card">Credit Card</option>
+                        <option value="Charge Card">Charge Card</option>
+                        <option value="Deferred Debit Card">Deferred Debit Card</option>
+                        </select>
+            </div>
+
+            <div class="textbox">
+                    <input type="text" placeholder="Credit card number..." name="fname" value="" required></div>
+                  
+            <div class="textbox"> 
+            <input type="text" placeholder="Expiry month" name="paddress" value="" required minlength="2" maxlength="2"></div>
+            
+            <div class="textbox">
+            <input type="number" placeholder="Expiry year" name="pcode" value="" required minlength="4" maxlength="4"></div>
+
+<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+<button class="btn" type="submit">Sign Up </button>  <button class="btn" type="reset"> Cancel</button>
+
+
+</div>
+</form>
+</body>
+</html>
