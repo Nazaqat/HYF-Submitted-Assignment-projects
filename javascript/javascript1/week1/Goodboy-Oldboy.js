@@ -4,7 +4,7 @@ const dogYearAgeOfDog = (dogYearFuture - dogYearOfBirth) * 7;
 const dogYearAgeOfHuman = dogYearFuture - dogYearOfBirth;
 const shouldShowResultInDogYears = false;
 
-if (shouldShowResultInDogYears){
+if (false){
     console.log(`Your dog will be ${dogYearAgeOfHuman} human years old in ${dogYearFuture}`)
 }
 
