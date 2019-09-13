@@ -1,5 +1,5 @@
 
-
+// what to wear according to weather conditions, a function
 function wvear(temperature){
 	if (temperature >= 40){
 	return "shorts and T-shirt will do"
