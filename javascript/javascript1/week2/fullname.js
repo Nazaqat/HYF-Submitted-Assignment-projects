@@ -1,23 +1,24 @@
 
-const fullName1 = "Benjamin Hughes";
-const fullName2 = "Nazaqat Ali";
-const useFormalName = "Lord";
 
-var namestr = getFullName(useFormalName, fullName2);
-console.log(namestr);
+const fullName1 = getFullName("Benjamin", "Hughes", true);
+const fullName2 = getFullName("Nazaqat", "Ali");
 
 
-function getFullName (Para1, Para2 ) { //function creation
 
-// if else statement/ outside the function
-if ($("#fchbx").is(':checked') )
-    return Para1 + " " + Para2;
+function getFullName (useFormalName, firstName, lastName ) { 
+
+    if (useFormalName){
+    return "Lord" + '  ' + firstName + lastName;
+}
 else
-    return Para2;
+return firstName + lastName;
 
 }
 
-  
+
+
+console.log(fullName1);
+console.log(fullName2);
   
  
 
