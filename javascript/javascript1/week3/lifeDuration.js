@@ -1,5 +1,5 @@
 
-const gameOfThrones = (3.041667/29200*100); // const definition + call to function
+const gameOfThrones = (3.041667/29200*100); 
 const sopranos = (3.58/29200*100);
 const theWire = (2.50/29200*100);
 
