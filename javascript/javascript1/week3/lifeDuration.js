@@ -11,7 +11,7 @@ document.write(percentFor/percentOf*100);
 }
 
 console.log("The Game of Thrones took" + " " + gameOfThrones.toFixed(3)  +  " " + "of my precious life");
-console.log("Sopranos took" + " " + sopranos.toFixed(2)  + " " + "of my precious life");
+console.log("Sopranos took" + " " + sopranos.toFixed(3)  + " " + "of my precious life");
 console.log("The Wire took" + " " + theWire.toFixed(3)  + " " + "of my precious life");
 console.log("In total that is" + " " + (gameOfThrones + sopranos + theWire).toFixed(3)  + " "+"of my life");
 
