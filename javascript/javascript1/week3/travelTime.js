@@ -12,7 +12,7 @@ const travelInformation = {
     var rhours = Math.floor(hours);
     var minutes = (hours - rhours) * 60;
     var rminutes = Math.round(minutes);
-    return "Time to destination is" +" " + num + " minutes OR " + rhours + " hour(s) and " + rminutes + " minute(s).";
+    return "Time to destination is"+ " " + rhours + " hour(s) and " + rminutes + " minute(s).";
     }
     console.log(timeConvert(travelTime));
 
