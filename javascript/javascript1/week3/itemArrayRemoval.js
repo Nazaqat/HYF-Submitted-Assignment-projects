@@ -1,10 +1,11 @@
-const names = ['Peter', 'Ahmad', 'Yana', 'kristina', 'Rasmus', 'Samuel', 'katrine', 'Tala'];
+const names = ['Peter', 'Ahmad', 'Yana', 'kristina', 'Rasmus','Samuel', 'katrine', 'Tala'];
 const nameToRemove = 'Ahmad';
 
-const remove = names.splice(1,1);//The first argument specifies the location at which to begin adding or removing elements. 
-//The second argument specifies the number of elements to remove.
-
-
+for (let i=0; i<names.length; i++){
+    if (names[i] === 'Ahmad'){
+        names.splice(i,1);
+    }
+}
 
 console.log(names);
 
