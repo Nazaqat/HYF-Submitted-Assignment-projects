@@ -1,18 +1,78 @@
+const seriesDurations = [
 
-const gameOfThrones = (3.041667/29200*100); 
-const sopranos = (3.58/29200*100);
-const theWire = (2.50/29200*100);
+    {
 
-function getWholePercent1(percentOf,percentFor){
-for (let i=0; i<3; i++){
-document.write(percentFor/percentOf*100);
+      title: 'Home land',
 
-}
-}
+      days: 3,
 
-console.log("The Game of Thrones took" + " " + gameOfThrones.toFixed(3)  +  " " + "of my precious life");
-console.log("Sopranos took" + " " + sopranos.toFixed(3)  + " " + "of my precious life");
-console.log("The Wire took" + " " + theWire.toFixed(3)  + " " + "of my precious life");
-console.log("In total that is" + " " + (gameOfThrones + sopranos + theWire).toFixed(3)  + " "+"of my life");
+      hours: 1,
+
+      minutes: 0,  
+
+    },
+
+    {
+
+      title: 'House of cards',
+
+      days: 3,
+
+      hours: 14,
+
+      minutes: 0,
+
+    },
+
+    {
+
+      title: 'Friends',
+
+      days: 2,
+
+      hours: 12,
+
+      minutes: 0,
+
+    }
+
+  ];
+
+
+lifeDuration();
+function lifeDuration(){
+
+const LifeOfPerson = 80;
+const YearsInMin= LifeOfPerson * 525600;//  525600 Minuttes in a year
+  
+   sum = 0;  
+  
+    for (let i = 0; i<seriesDurations.length ; i++)
+  
+    {
+  
+      const daysInMinute = seriesDurations[i].days * 1440;
+  
+      const hoursInMinute = seriesDurations[i].hours * 60;
+        
+      const TotalMinutes = daysInMinute + hoursInMinute + seriesDurations[i].minutes;
+    
+      const Percentage = (TotalMinutes/YearsInMin) * 100;
+    
+  
+      console.log(`The ${seriesDurations[i].title} series took ${Percentage.toFixed(3)} % of my life`);  
+  
+  
+        sum += Percentage; 
+  
+  
+    }
+    
+  }
+  
+  console.log(`In total that is ${sum.toFixed(2)}% of my life`);
+  
+ 
+
 
 
