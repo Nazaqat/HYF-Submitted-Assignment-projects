@@ -22,22 +22,25 @@ const songDatabase = [{
 
 //Add song to database via function 
 const myPlaylist = [];
-function addSongToDatabase(song){
-    myPlaylist.push(song);
+function addSongToDatabase(title, artist){
+    songDatabase.push({
+      songId: songDatabase.length + 1,
+      title: title,
+      artist: artist
+  })
 }
 
-addSongToDatabase({
-    songId: songDatabase.length + 1,
-    title: 'Meray rashkay kamar',
-    artist: 'Nusrat Fateh Ali Khan',
-    link: `https://www.youtube.com/watch?v=B0QEU9gxapk`,
-  });
+addSongToDatabase(
+   'Meray rashkay kamar',
+   'Nusrat Fateh Ali Khan',
+   
+  );
 
-  addSongToDatabase({
-    songId: songDatabase.length + 2,
-    title: 'Jugni',
-    artist: 'Arif Lohar',
-    link: `https://www.youtube.com/watch?v=gjaH2iuoYWE`,
-  })
+  addSongToDatabase(
+    'Jugni',
+    'Arif Lohar',
+    
+  );
 
-  console.log(songDatabase);
+  
+console.log(songDatabase);
