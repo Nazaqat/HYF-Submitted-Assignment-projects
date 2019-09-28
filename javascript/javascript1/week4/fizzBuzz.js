@@ -1,7 +1,4 @@
-//Create a function that prints the numbers from 1 to 100
-//  for multiples of three print Fizz
-// the multiples of five print Buzz 
-//For numbers which are multiples of both three and five print FizzBuzz
+
 const fizzy = function(x,y){
        x= 3;
        y= 5;
