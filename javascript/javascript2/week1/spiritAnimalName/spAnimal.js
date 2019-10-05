@@ -13,7 +13,7 @@ const spAnimalName = [
 ];
 
 const input = document.getElementById('input');
-const btn = document.getElementById('getSpirit');
+const btn = document.getElementById('spirit');
 const p = document.getElementById('spName');
    
 input.addEventListener('input', function () { 
@@ -28,7 +28,7 @@ get(input.value, 'click');});
 
 function get(value, selectedOption) {
 const arrName = Math.floor(Math.random() * spAnimalName.length);
-const option = document.getElementById('selectOption').value;
+const option = document.getElementById('selectList').value;
   
 if (!input.value || !selectedOption) {
       p.textContent = `Enter your name & select a category`;
