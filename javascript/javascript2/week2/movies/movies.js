@@ -42,18 +42,16 @@ const returnTag = movies.map( obj => {
    });
 
   
-/*Using chaining, first filter the movies array to only contain the movies rated higher than 6. Now map the movies array to only the rating of the movies*/
+ 
 const ratingsOnly = movies.filter (items => items.rating > 6).map( items => items.rating)
 
-//Count the total number of movies containing any of following keywords: Surfer, Alien or Benjamin. So if there were 3 movies that contained Surfer, 1 with Alien and 2 with Benjamin, you would return 6. Can you make sure the search is case insensitive?
 
 const specialMovies = movies.reduce((total, obj) => (obj.title.search(/Surfer/i) >= 0 || obj.title.search(/Alien/i) >= 0 || obj.title.search(/Benjamin/i) >= 0) ? total += 1 : total, 0);
 
-// Create an array of movies where a word in the title is duplicated. Fx "Star Wars: The Clone Wars" the word Wars is duplicated.
+
 const duplicateWords = [];
 
-const x = 
-movies.map(obj => obj.title.split(' ')).forEach(item => item.filter((word, index) =>(item.indexOf(word) != index && word != "the" && word != "of" && word != "to") ?
+const x = movies.map(obj => obj.title.split(' ')).forEach(item => item.filter((word, index) =>(item.indexOf(word) != index && word != "the" && word != "of" && word != "to") ?
 duplicateWords.push(item.join(' ')) : false));
 
 
