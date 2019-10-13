@@ -26,14 +26,15 @@ renderProducts(products);
 //Second week
 
 const searchForItems = document.querySelector('input');
-searchForItems.addEventListener('input', searchFilter);
 
-const sorting = () => {const searchedItems = products.filter(item =>{ item.name.includes(searchForItems.value)});
+function sorting() {
+    const searchedItems = products.filter(item => item.name.includes(searchForItems.value));
   
     renderProducts(searchedItems);
   
   }
   
+  searchForItems.addEventListener('input', sorting);
 
 
 
