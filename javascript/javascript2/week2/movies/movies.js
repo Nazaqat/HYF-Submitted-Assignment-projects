@@ -46,12 +46,15 @@ const returnTag = movies.map( obj => {
 const ratingsOnly = movies.filter (items => items.rating > 6).map( items => items.rating)
 
 
-const specialMovies = movies.reduce((total, obj) => (obj.title.search(/Surfer/i) >= 0 || obj.title.search(/Alien/i) >= 0 || obj.title.search(/Benjamin/i) >= 0) ? total += 1 : total, 0);
+const specialMovies = movies.reduce((total, obj) => (obj.title.search(/Surfer/i) >= 0 || obj.title.search(/Alien/i) >= 0 ||
+                      obj.title.search(/Benjamin/i) >= 0) ? total += 1 : total, 0);
 
 
 const duplicateWords = [];
 
-const x = movies.map(obj => obj.title.split(' ')).forEach(item => item.filter((word, index) =>(item.indexOf(word) != index && word != "the" && word != "of" && word != "to") ?
+const x = movies.map(obj => obj.title.split(' ')).forEach(item => item.filter((word, index) =>(item.indexOf(word) != index &&
+                           word != "the" && word != "of" && word != "to") ?
+                                                                              
 duplicateWords.push(item.join(' ')) : false));
 
 
