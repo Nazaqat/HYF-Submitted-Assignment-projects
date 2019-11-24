@@ -29,9 +29,10 @@
 		use school_db; 
 		create table `Class` (`id` int(10) unsigned not null auto_increment, `name` varchar(255) not null,`begins` DATETIME NULL DEFAULT NULL,`ends` DATETIME NULL DEFAULT NULL);
 
-		insert into Class (id, name, begins, ends)values (1, 'Aarika Ellingworth', '04-08-2019 12:00:00''04-02-2020 16:00:00');
+		insert into Class (id, name, begins, ends)values (1, 'Aarika Ellingworth', '2019-08-04 12:00:00''2020-02-04 16:00:00');
 
-		created student table like Class table above!!
+		create table `student` (`id` int(10) unsigned not null auto_increment, `name` varchar(255) not null,`email` varchar(255) not null,`phone` varchar(255) not null, 
+		`class_id` int(10) unsigned not null FOREGIN KEY);
 		insert into student (id, name,  email,  phone, class_id) values ('1', 'Aarika Ellingworth', 'ael@outlook.com','+45 1111 2222', '11');
 
 	2- If you are done with the above tasks, you can continue with these advanced tasks: 
@@ -42,3 +43,7 @@
 		use school_db;
 		ALTER TABLE `class` ADD COLUMN status  varchar(255) NOT NULL AFTER ends;
 		update school_db.class SET status = 'finished' WHERE id IN (8,9);
+
+		OR
+		alter table school_db.class
+		add status enum ('not started', 'on going', 'finished') NOT NULL DEFAULT 'not started';
