@@ -1,5 +1,40 @@
 
-	-- Meal --
+CREATE database food_db;
+USE food_db;
+CREATE TABLE meal (
+id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+title VARCHAR(255) NOT NULL,
+description TEXT NOT NULL,
+location VARCHAR(50) NOT NULL,
+`when` DATETIME NOT NULL,
+max_reservations INT NOT NULL,
+price DECIMAL(10,2) NOT NULL,
+created_date DATETIME NOT NULL DEFAULT NOW(),
+PRIMARY KEY (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE reservation (
+id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+number_of_guests INT UNSIGNED NOT NULL,
+meal_id INT UNSIGNED NOT NULL,
+created_date DATETIME NOT NULL DEFAULT NOW(),
+PRIMARY KEY (id),
+FOREIGN KEY (meal_id) REFERENCES meal (id) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+CREATE TABLE review (
+id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+title VARCHAR(255) NOT NULL,
+description TEXT NOT NULL,
+meal_id INT UNSIGNED NOT NULL,
+stars INT UNSIGNED NOT NULL,
+created_date DATETIME NOT NULL DEFAULT NOW(),
+PRIMARY KEY (id),
+FOREIGN KEY (meal_id) REFERENCES meal (id) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+    -- Meal --
 	-- Get all meals--
 		select title from food_db.meal;
 
