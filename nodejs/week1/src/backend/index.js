@@ -2,86 +2,85 @@ const express = require("express");
 const app = express();
 const fs = require("fs");
 
-const meals = JSON.parse(fs.readFileSync(__dirname + "/data/meals.json", 'utf8'));
-const reviews = JSON.parse(fs.readFileSync(__dirname + "/data/reviews.json", 'utf8'));
-const reservations = JSON.parse(fs.readFileSync(__dirname + "/data/reservations.json", 'utf8'));
+const meals = JSON.parse(fs.readFileSync(__dirname + "/data/meals.json"));
+const reviews = JSON.parse(fs.readFileSync(__dirname + "/data/reviews.json"));
+const reservations = JSON.parse(fs.readFileSync(__dirname + "/data/reservations.json"));
 
-//Respond with the json for all the meals. For each meal, if there are reviews matching it's meal ID, add these reviews to each meal in the form of an array. For meals that do not have any reviews, the "reviews" property will be an empty array. (watch the GIF below to understand how it should be structured)
+/*Respond with the json for all the meals. For each meal, if there are reviews matching it's meal ID, 
+add these reviews to each meal in the form of an array. For meals that do not have any reviews, the "reviews"
+property will be an empty array. (watch the GIF below to understand how it should be structured)*/
 
 app.get("/meals", (req, res) => {
+
     meals.map(meal => {
         meal.reviews = [];
         reviews.forEach(
-            review => (review.mealsId === meals.id ? meal.reviews.push(review) : review)
+            review => (review.mealId === meal.id ? meal.reviews.push(review) : review)
         );
 
-        res.json(meals);
-
     })
+    res.send(meals);
 });
 
 //Respond with the json for all the meals (including it's reviews) that are cheap (you define what a cheap meal is)
 
-app.get("/meals/cheapMeal", (req, res) => {
-    const cheapMeal = meals.filter(mealPrice => mealPrice.price < 100);
+app.get("/cheap-meals", (req, res) => {
+
+    const cheapMeals = meals.filter(mealPrice => mealPrice.price < 100);
     meals.map(meal => {
         meal.reviews = [];
         reviews.forEach(
-            review => (review.mealsId === meals.id ? meal.reviews.push(review) : review)
+            review => (review.mealId === meal.id ? meal.reviews.push(review) : review)
         );
-
-        res.json(cheapMeal);
     })
+    res.json(cheapMeals);
 });
 
 //Respond with the json for all the meals (including it's reviews) that can fit lots of people
+app.get("/large-meals", (req, res) => {
 
-app.get("/meals/largeMeal", (req, res) => {
-    const largeMeal = meals.filter(mealPrice => mealPrice.maxNumberOfGuests > 25);
+    const largeMeals = meals.filter(mealPrice => mealPrice.price > 100);
     meals.map(meal => {
         meal.reviews = [];
         reviews.forEach(
-            review => (review.mealsId === meals.id ? meal.reviews.push(review) : review)
+            review => (review.mealId === meal.id ? meal.reviews.push(review) : review)
         );
 
-        res.json(largeMeal);
     })
+    res.json(largeMeals);
 });
 
 //Respond with the json for a random meal (including it's reviews)
 
-app.get("/meals/randomMeal", (req, res) => {
+app.get("/random-meals", (req, res) => {
     const random = Math.floor(Math.random() * meals.length);
-    const randomMeal = meals.filter(mealReview => mealReview.id === random);
+    const randomMeal = meals[random]
     meals.map(meal => {
         meal.reviews = [];
         reviews.forEach(
-            review => (review.mealsId === meals.id ? meal.reviews.push(review) : review)
+            review => (review.mealId === meal.id ? meal.reviews.push(review) : review)
         );
 
-        res.json(randomMeal);
     })
+    res.json(randomMeal);
 });
 
 //Respond with the json for all reservations
 
 app.get("/reservations", (req, res) => {
-
     res.json(reservations);
 });
 
 //Respond with the json for a random reservation
 
-app.get("/reservations/random", (req, res) => {
+app.get("/random-reservations", (req, res) => {
     const random = Math.floor(Math.random() * reservations.length);
-    const randomRes = reservations.filter(items => items.id === random);
+    const randomreservation = reservations[random]
 
-    res.json(randomRes);
+    res.json(randomreservation);
 });
 
 
 
 
-
-
-app.listen(3000, () => console.log("server started!"));
+app.listen(3500, () => console.log("server started"));
