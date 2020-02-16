@@ -1,79 +1,82 @@
-import React from 'react';
-import Header from './component/Header'
-import Modal from './component/Modal'
-import DisplayList from './component/DisplayList'
+import React, { useState } from 'react';
+import Header from './components/Header';
+import AddRandom from './components/AddRandom';
+import TodoForm from './components/TodoForm';
+import Todo from './components/Todo';
 import './App.css';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-// I think the import path is wrong. Shouldn't it be 
+function App() {
+	const [ todos, setTodos ] = useState([
+		{
+			text: 'Get out of bed',
+			deadline: '16-02-2020',
+			isCompleted: false
+		},
+		{
+			text: 'Brush teeth',
+			deadline: '16-03-2020',
+			isCompleted: false
+		},
+		{
+			text: 'Eat breakfast',
+			deadline: '20-03-2020',
+			isCompleted: true
+		}
+	]);
 
-// @fortawesome/<write module here>
-// @fontwesome/<write module here>
-// @fontwesome/<write module here>?
+	const updateTodo = (index, text, deadline) => {
+		const updatedTodos = todos.map((element, currentIndex) => {
+			if (currentIndex == index) {
+				return {
+					...element,
+					text: text,
+					deadline: deadline
+				};
+			} else return element;
+		});
+		setTodos(updatedTodos);
+		console.log('this is from updated todo', updatedTodos);
+	};
 
-library.add(faTrash);
+	const addTodo = ({ text, deadline }) => {
+		const newTodos = [ ...todos, { text, deadline } ];
+		setTodos(newTodos);
+		console.log('this is from new todo', newTodos);
+	};
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: '', items: []};
+	const completeTodo = (index) => {
+		const newTodos = [ ...todos ];
+		newTodos[index].isCompleted = true;
+		setTodos(newTodos);
+	};
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handelDelete = this.handelDelete.bind(this);
-  }
+	const removeTodo = (index) => {
+		const newTodos = [ ...todos ];
+		newTodos.splice(index, 1);
+		setTodos(newTodos);
+	};
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    event.preventDefault(); 
-
-    var value = this.state.value;
-    var newItems = this.state.items.concat(value);
-    
-    this.setState({value: '', items:newItems})
-    
-  }
-
-  deleteItem(key){
-    const filteredItems = this.state.items.filter(item => 
-        item.key!==key);
-        this.setState({
-            items: filteredItems
-          })
-}
-
-
-  render() {
-
- 
-  return (
-    <div className="App">
-      
-     <Modal>
-       <Header></Header>
-       
-       <form onSubmit={this.handleSubmit}> 
-        <input type="text" placeholder="Enter activity here.." value={this.state.value} onChange={this.handleChange} />
-        <input type="submit" value="Submit" />
-      </form>
-
-      <DisplayList
-      handelDelete={this.handelDelete}
-      items={this.state.items}
-      
-      >
-
-      </DisplayList>
-      
-       
-     </Modal>
-    </div>
-  );
-}
+	return (
+		<div className="app">
+			{/* <Modal> */}
+			<Header />
+			<TodoForm addTodo={addTodo} />
+			<div className="todo-list">
+				{todos.map((todo, index) => (
+					<Todo
+						key={index}
+						index={index}
+						todo={todo}
+						completeTodo={completeTodo}
+						removeTodo={removeTodo}
+						updateTodo={updateTodo}
+					/>
+				))}
+			</div>
+			<AddRandom />
+			{/* </Modal> */}
+		</div>
+	);
 }
 
 export default App;
