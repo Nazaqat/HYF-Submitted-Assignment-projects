@@ -1,0 +1,84 @@
+body {
+	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSVolJ3Ougv6hBuaNUuuTTdjKN0is4__qDzvk-GNHKR7LHtOBxM');
+	height: 700px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+header {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: xx-large;
+	margin-top: 2%;
+	color:gold;
+}
+.App {
+	text-align: center;
+}
+
+input[type=text] {
+	width: 40%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: none;
+	border-bottom: 2px solid gold;
+	margin-top: 2%;
+	font-size: 20px;
+}
+
+input[type=text]:focus {
+	border-bottom: 4px solid green;
+}
+.repoResponse {
+	font-size: 20px;
+	list-style-type: none;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	text-align: left;
+	margin-left: 41.3%;
+	
+}
+
+a{
+	text-decoration:none;
+	color: rgb(0, 255, 85);
+	
+
+}
+a:hover{
+	color:gold;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
+}
+
+.App-header {
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+}
+
+.App-link {
+	color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+
